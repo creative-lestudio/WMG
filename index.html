@@ -140,12 +140,13 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.0
 .card .in{position:absolute;z-index:2;inset:auto 0 0;padding:1.3rem;display:grid;gap:.3rem}
 .card .cat{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--volt);font-weight:600}
 .card b{font-family:var(--display);font-size:clamp(1.3rem,2vw,1.8rem);letter-spacing:-.04em;line-height:1.05}
-.card .go{position:absolute;z-index:2;top:1rem;right:1rem;width:2.6rem;height:2.6rem;border-radius:50%;background:var(--ice);color:var(--night);display:grid;place-items:center;font-weight:700;opacity:0;transform:scale(.6) rotate(-45deg);transition:.4s var(--ease)}
-.card:hover .go{opacity:1;transform:none}
+.card .go{position:absolute;z-index:2;top:1rem;right:1rem;width:2.6rem;height:2.6rem;border-radius:50%;background:var(--volt);color:var(--night);display:grid;place-items:center;font-weight:700;pointer-events:none;transition:transform .4s var(--ease)}
+.card:hover .go{transform:rotate(45deg) scale(1.08)}
 
 .card .ini{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:clamp(4rem,9vw,8rem);letter-spacing:-.06em;color:rgba(231,235,241,.9);padding-bottom:18%}
 .card .stretch{position:absolute;inset:0;z-index:1}
-.card .soc{display:flex;gap:.5rem;margin-top:.5rem;position:relative;z-index:3}
+.card .soc{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;position:relative;z-index:3}
+@media(max-width:560px){.card .in{padding:1rem}.card .soc a{font-size:.68rem;padding:.3rem .65rem}}
 .card .soc a{font-size:.75rem;font-weight:600;padding:.35rem .8rem;border:1px solid rgba(231,235,241,.5);border-radius:999px;transition:.25s}
 .card .soc a:hover{background:var(--volt);border-color:var(--volt);color:var(--night)}
 .card.join{background:transparent;border:2px dashed var(--line);display:block;grid-column:1/-1;aspect-ratio:auto;min-height:clamp(120px,14vw,170px)}
@@ -558,7 +559,7 @@ body.lock{overflow:hidden}
       '<div class="bg"></div>'+(r.img?'<img src="'+r.img+'" alt="'+r.n+'" loading="lazy" style="object-position:'+(r.pos||'50% 20%')+'">':'<span class="mk">'+mark+'</span><span class="ini">'+ini+'</span>')+
       '<button class="stretch" type="button" data-i="'+ROSTER.indexOf(r)+'" aria-label="Ver media kit de '+r.n+'"></button>'+
       '<span class="go">↗</span><div class="in"><span class="cat">'+r.c+'</span><b>'+r.n+'</b>'+
-      '<div class="soc"><button class="mkbtn" type="button" data-i="'+ROSTER.indexOf(r)+'">Media kit</button><a href="'+r.ig+'" target="_blank" rel="noopener">Instagram</a><a href="'+r.tt+'" target="_blank" rel="noopener">TikTok</a></div></div></article>';
+      '<div class="soc"><a href="'+r.ig+'" target="_blank" rel="noopener">Instagram</a><a href="'+r.tt+'" target="_blank" rel="noopener">TikTok</a></div></div></article>';
   }).join('')+
   '<a class="card join" href="#contacto" data-tab="talento"><span class="mk">'+mark+'</span><div class="in"><span class="cat">¿Eres talento?</span><b>Sé parte de WMG <span class="hl">↗</span></b></div></a>';
   var fl=$('#filters');

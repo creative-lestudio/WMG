@@ -41,7 +41,7 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.0
 .tag{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--volt)}
 .tag::before{content:"";width:.55rem;height:.55rem;background:currentColor;transform:rotate(45deg)}
 .hl{color:var(--volt)}
-.out{color:transparent;-webkit-text-stroke:1.5px var(--ice)}
+.out{color:#9C8DFF}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.6rem;border-radius:999px;font-weight:600;font-size:.9rem;border:1.5px solid var(--ice);transition:transform .35s var(--ease),background .3s,color .3s,box-shadow .35s}
@@ -148,7 +148,10 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.0
 .card .soc{display:flex;gap:.5rem;margin-top:.5rem;position:relative;z-index:3}
 .card .soc a{font-size:.75rem;font-weight:600;padding:.35rem .8rem;border:1px solid rgba(231,235,241,.5);border-radius:999px;transition:.25s}
 .card .soc a:hover{background:var(--volt);border-color:var(--volt);color:var(--night)}
-.card.join{background:transparent;border:2px dashed var(--line);display:block}
+.card.join{background:transparent;border:2px dashed var(--line);display:block;grid-column:1/-1;aspect-ratio:auto;min-height:clamp(120px,14vw,170px)}
+.card.join .mk{width:auto;height:240%;left:auto;right:3%;top:-70%}
+.card.join .in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:1.6rem clamp(1.4rem,3vw,2.6rem)}
+.card.join b{font-size:clamp(1.6rem,3.4vw,3rem)}
 .card.join .bg{display:none}.card.join::after{display:none}
 .card.join:hover{border-color:var(--volt)}
 .wa{position:fixed;right:clamp(14px,2vw,28px);bottom:clamp(14px,2vw,28px);z-index:40;display:flex;align-items:center;gap:.6rem;background:#25D366;color:#04210f;font-weight:600;font-size:.88rem;padding:.8rem 1.1rem;border-radius:999px;box-shadow:0 10px 30px -8px rgba(0,0,0,.5);transition:transform .3s var(--ease)}
@@ -212,9 +215,22 @@ input:focus,textarea:focus{outline:0;border-color:var(--volt);background:rgba(23
 .fb{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
 .status{color:var(--volt);font-size:.9rem}
 
+.cl{color:#cfd2ea;font-size:1.1rem;max-width:30rem}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:.3rem;background:rgba(231,235,241,.08);padding:.3rem;border-radius:999px}
+.tabs input{position:absolute;opacity:0;pointer-events:none}
+.tabs label{text-align:center;padding:.8rem .6rem;border-radius:999px;cursor:pointer;font-size:.88rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ice);transition:.3s}
+.tabs input:checked+label{background:var(--volt);color:var(--night)}
+.tabs input:focus-visible+label{outline:2px solid var(--volt);outline-offset:2px}
+.panel{display:grid;gap:1.1rem}.panel[hidden]{display:none}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+select{width:100%;font:inherit;color:var(--ice);background:rgba(231,235,241,.06);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23C9F25B' stroke-width='2'%3E%3Cpath d='m1 1 5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+select:focus{outline:0;border-color:var(--volt)}
+select option{background:var(--deep);color:var(--ice)}
+.fb .btn{cursor:pointer}
+@media(max-width:560px){.row{grid-template-columns:1fr}.tabs label{font-size:.8rem}}
 /* footer */
 .ft{background:var(--deep);padding-block:clamp(2.5rem,5vw,4rem) 1.6rem}
-.big-w{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,12.2vw,14rem);letter-spacing:-.07em;line-height:.85;color:transparent;-webkit-text-stroke:1.5px rgba(231,235,241,.28);white-space:nowrap;overflow:hidden;margin-bottom:2rem;user-select:none}
+.big-w{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,12.2vw,14rem);letter-spacing:-.07em;line-height:.85;color:#3A31A0;white-space:nowrap;overflow:hidden;margin-bottom:2rem;user-select:none}
 .ft-g{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;color:var(--mute);font-size:.9rem}
 .ft-g a:hover{color:var(--volt)}
 .ft-g nav{display:flex;gap:1.4rem;flex-wrap:wrap}
@@ -356,25 +372,61 @@ input:focus,textarea:focus{outline:0;border-color:var(--volt);background:rgba(23
     <div class="rv">
       <div class="tag">Contacto</div>
       <h2>Hagamos algo <span class="hl">grande.</span></h2>
-      <div style="display:grid;gap:.9rem;justify-items:start">
+      <p class="cl">¿Eres una marca que busca talento, o un creador que quiere ser representado? Cuéntanos y te respondemos pronto.</p>
+      <div style="display:grid;gap:.9rem;justify-items:start;margin-top:1.8rem">
         <a class="ig" href="https://www.instagram.com/worldmanagementgroup/" target="_blank" rel="noopener">@worldmanagementgroup ↗</a>
         <a class="ig" href="mailto:creative.lestudio@gmail.com">creative.lestudio@gmail.com</a>
         <a class="ig" href="https://wa.me/584241859724" target="_blank" rel="noopener">WhatsApp +58 424 185 9724</a>
       </div>
     </div>
     <form id="form" class="rv" style="--d:.1s" novalidate>
-      <div class="f"><label for="nombre">Nombre / Marca</label><input id="nombre" type="text" autocomplete="name" required></div>
-      <div class="f"><label for="correo">Correo electrónico</label><input id="correo" type="email" autocomplete="email" required></div>
-      <div class="f"><label for="redes">Perfil en redes</label><input id="redes" type="text" placeholder="@usuario"></div>
-      <fieldset class="f"><legend>Me comunico como</legend>
-        <div class="chips">
-          <input type="radio" name="rol" id="r1" value="Marca" checked><label for="r1">Marca</label>
-          <input type="radio" name="rol" id="r2" value="Talento"><label for="r2">Talento</label>
-          <input type="radio" name="rol" id="r3" value="Prensa / Otro"><label for="r3">Prensa / Otro</label>
+      <div class="tabs" role="radiogroup" aria-label="Tipo de contacto">
+        <input type="radio" name="tab" id="t-marca" value="marca" checked><label for="t-marca">Soy una marca</label>
+        <input type="radio" name="tab" id="t-talento" value="talento"><label for="t-talento">Quiero ser representado</label>
+      </div>
+
+      <div class="panel" id="p-marca" data-title="Marca / Empresa">
+        <div class="row">
+          <div class="f"><label for="m-emp">Marca o empresa *</label><input id="m-emp" data-l="Marca" type="text" required></div>
+          <div class="f"><label for="m-nom">Tu nombre *</label><input id="m-nom" data-l="Contacto" type="text" autocomplete="name" required></div>
         </div>
-      </fieldset>
-      <div class="f"><label for="msg">Mensaje</label><textarea id="msg" rows="4"></textarea></div>
-      <div class="fb"><button class="btn volt" type="submit">Enviar <span class="ar">↗</span></button><p class="status" id="status" role="status"></p></div>
+        <div class="row">
+          <div class="f"><label for="m-cor">Correo *</label><input id="m-cor" data-l="Correo" type="email" autocomplete="email" required></div>
+          <div class="f"><label for="m-tel">WhatsApp / teléfono</label><input id="m-tel" data-l="Teléfono" type="text" autocomplete="tel"></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="m-tip">Tipo de proyecto</label><select id="m-tip" data-l="Proyecto"><option value="">Selecciona…</option><option>Campaña con creadores</option><option>Embajador de marca</option><option>Evento / activación</option><option>Contenido UGC</option><option>Otro</option></select></div>
+          <div class="f"><label for="m-pre">Presupuesto aproximado</label><select id="m-pre" data-l="Presupuesto"><option value="">Selecciona…</option><option>Menos de $1.000</option><option>$1.000 – $5.000</option><option>$5.000 – $15.000</option><option>Más de $15.000</option><option>Por definir</option></select></div>
+        </div>
+        <fieldset class="f"><legend>Talentos de interés</legend><div class="chips" id="m-tal"></div></fieldset>
+        <div class="f"><label for="m-msg">Cuéntanos sobre tu proyecto *</label><textarea id="m-msg" data-l="Mensaje" rows="4" required></textarea></div>
+      </div>
+
+      <div class="panel" id="p-talento" data-title="Talento" hidden>
+        <div class="row">
+          <div class="f"><label for="t-nom">Nombre o nombre artístico *</label><input id="t-nom" data-l="Nombre" type="text" autocomplete="name" required></div>
+          <div class="f"><label for="t-cor">Correo *</label><input id="t-cor" data-l="Correo" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="t-tel">WhatsApp *</label><input id="t-tel" data-l="WhatsApp" type="text" autocomplete="tel" required></div>
+          <div class="f"><label for="t-pais">País / ciudad</label><input id="t-pais" data-l="Ubicación" type="text"></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="t-ig">Instagram *</label><input id="t-ig" data-l="Instagram" type="text" placeholder="@usuario" required></div>
+          <div class="f"><label for="t-tt">TikTok</label><input id="t-tt" data-l="TikTok" type="text" placeholder="@usuario"></div>
+        </div>
+        <div class="row">
+          <div class="f"><label for="t-seg">Seguidores (total aprox.)</label><select id="t-seg" data-l="Seguidores"><option value="">Selecciona…</option><option>Menos de 10 mil</option><option>10 mil – 50 mil</option><option>50 mil – 200 mil</option><option>200 mil – 1 millón</option><option>Más de 1 millón</option></select></div>
+          <div class="f"><label for="t-cat">Tipo de contenido</label><select id="t-cat" data-l="Contenido"><option value="">Selecciona…</option><option>Lifestyle</option><option>Moda / modelaje</option><option>Belleza</option><option>Música</option><option>Humor / entretenimiento</option><option>Otro</option></select></div>
+        </div>
+        <div class="f"><label for="t-msg">Cuéntanos sobre ti y tus metas *</label><textarea id="t-msg" data-l="Mensaje" rows="4" required></textarea></div>
+      </div>
+
+      <div class="fb">
+        <button class="btn volt" type="submit" id="send-mail">Enviar por correo <span class="ar">↗</span></button>
+        <button class="btn line" type="button" id="send-wa">Enviar por WhatsApp</button>
+      </div>
+      <p class="status" id="status" role="status"></p>
     </form>
   </div>
 </section>
@@ -396,10 +448,10 @@ input:focus,textarea:focus{outline:0;border-color:var(--volt);background:rgba(23
 (function(){
   /* ===== ROSTER: agrega nuevos talentos aquí (y su foto con img:"assets/talentos/x.webp") ===== */
   var ROSTER=[
-    {n:"César Oliveira",c:"Creador",k:["#2F2780","#6F5CFF","#17123F"],ig:"https://www.instagram.com/cesaaoliveira_/",tt:"https://www.tiktok.com/@cesaaoli"/* ,img:"assets/talentos/cesar-oliveira.webp" */},
-    {n:"Viviana De Andrade",c:"Creadora",k:["#17123F","#C9F25B","#2F2780"],ig:"https://www.instagram.com/vivianadeandrade/",tt:"https://www.tiktok.com/@vivianadeandrade"},
-    {n:"Johy Alvarez",c:"Creadora",k:["#6F5CFF","#E7EBF1","#2F2780"],ig:"https://www.instagram.com/johyalvarrez/",tt:"https://www.tiktok.com/@johyalvarrez"},
-    {n:"Eguita",c:"Creadora",k:["#2F2780","#C9F25B","#0E0B2B"],ig:"https://www.instagram.com/eguitaa_/",tt:"https://www.tiktok.com/@eguitaaa_"}
+    {n:"César Oliveira",c:"Creator",k:["#2F2780","#6F5CFF","#17123F"],img:"assets/talentos/cesar-oliveira.webp",pos:"50% 15%",ig:"https://www.instagram.com/cesaaoliveira_/",tt:"https://www.tiktok.com/@cesaaoli"},
+    {n:"Viviana De Andrade",c:"Creator",k:["#17123F","#C9F25B","#2F2780"],img:"assets/talentos/viviana-de-andrade.webp",pos:"42% 20%",ig:"https://www.instagram.com/vivianadeandrade/",tt:"https://www.tiktok.com/@vivianadeandrade"},
+    {n:"Johy Alvarez",c:"Creator",k:["#6F5CFF","#E7EBF1","#2F2780"],img:"assets/talentos/johy-alvarez.webp",pos:"50% 20%",ig:"https://www.instagram.com/johyalvarrez/",tt:"https://www.tiktok.com/@johyalvarrez"},
+    {n:"Eguita",c:"Creator",k:["#2F2780","#C9F25B","#0E0B2B"],img:"assets/talentos/eguita.webp",pos:"60% 20%",ig:"https://www.instagram.com/eguitaa_/",tt:"https://www.tiktok.com/@eguitaaa_"}
   ];
   var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
   var mark='<svg viewBox="315 327 449 425" fill="#E7EBF1"><use href="#wm"/></svg>';
@@ -410,24 +462,24 @@ input:focus,textarea:focus{outline:0;border-color:var(--volt);background:rgba(23
   $('#tk').innerHTML=t+t;
 
   /* roster */
-  var cats=["Todos"].concat(ROSTER.map(function(r){return r.c.replace(/[ao]$/,"")}).filter(function(v,i,a){return a.indexOf(v)===i}));
+  var cats=["Todos"].concat(ROSTER.map(function(r){return r.c}).filter(function(v,i,a){return a.indexOf(v)===i}));
   var g=$('#roster-g');
   g.innerHTML=ROSTER.map(function(r){
     var ini=r.n.split(' ').map(function(w){return w[0]}).join('');
     return '<article class="card" data-c="'+r.c+'" style="--c1:'+r.k[0]+';--c2:'+r.k[1]+';--c3:'+r.k[2]+'">'+
-      '<div class="bg"></div>'+(r.img?'<img src="'+r.img+'" alt="'+r.n+'" loading="lazy">':'<span class="mk">'+mark+'</span><span class="ini">'+ini+'</span>')+
+      '<div class="bg"></div>'+(r.img?'<img src="'+r.img+'" alt="'+r.n+'" loading="lazy" style="object-position:'+(r.pos||'50% 20%')+'">':'<span class="mk">'+mark+'</span><span class="ini">'+ini+'</span>')+
       '<a class="stretch" href="'+r.ig+'" target="_blank" rel="noopener" aria-label="Instagram de '+r.n+'"></a>'+
       '<span class="go">↗</span><div class="in"><span class="cat">'+r.c+'</span><b>'+r.n+'</b>'+
       '<div class="soc"><a href="'+r.ig+'" target="_blank" rel="noopener">Instagram</a><a href="'+r.tt+'" target="_blank" rel="noopener">TikTok</a></div></div></article>';
   }).join('')+
-  '<a class="card join" href="#contacto"><span class="mk">'+mark+'</span><div class="in"><span class="cat">¿Eres talento?</span><b>Sé parte de WMG <span class="hl">↗</span></b></div></a>';
+  '<a class="card join" href="#contacto" data-tab="talento"><span class="mk">'+mark+'</span><div class="in"><span class="cat">¿Eres talento?</span><b>Sé parte de WMG <span class="hl">↗</span></b></div></a>';
   var fl=$('#filters');
   if(cats.length<=2)fl.hidden=true;
   fl.innerHTML=cats.map(function(c,i){return '<button class="fl'+(i?'':' on')+'" type="button" aria-pressed="'+(!i)+'" data-f="'+c+'">'+c+'</button>'}).join('');
   fl.addEventListener('click',function(e){
     var b=e.target.closest('.fl');if(!b)return;
     $$('.fl',fl).forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
-    $$('.card',g).forEach(function(c){c.classList.toggle('hide',b.dataset.f!=='Todos'&&c.dataset.c.replace(/[ao]$/,'')!==b.dataset.f)});
+    $$('.card',g).forEach(function(c){c.classList.toggle('hide',b.dataset.f!=='Todos'&&c.dataset.c!==b.dataset.f)});
   });
   /* tilt */
   if(matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches){
@@ -455,15 +507,44 @@ input:focus,textarea:focus{outline:0;border-color:var(--volt);background:rgba(23
     $$('.rv').forEach(function(el){io.observe(el)});
   }else{$$('.rv').forEach(function(el){el.classList.add('in')});$$('[data-count]').forEach(function(el){el.textContent=el.dataset.count})}
 
-  /* form → mailto (reemplazar por backend / Formspree cuando haya correo oficial) */
-  var EMAIL='creative.lestudio@gmail.com';
-  $('#form').addEventListener('submit',function(e){
-    e.preventDefault();
-    var n=$('#nombre').value.trim(),c=$('#correo').value.trim(),st=$('#status');
-    if(!n||!/^\S+@\S+\.\S+$/.test(c)){st.textContent='Completa tu nombre y un correo válido.';return}
-    var rol=($('input[name=rol]:checked')||{}).value,body='Nombre: '+n+'\nCorreo: '+c+'\nRedes: '+$('#redes').value+'\nRol: '+rol+'\n\n'+$('#msg').value;
-    location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('Contacto web — '+rol)+'&body='+encodeURIComponent(body);
-    st.textContent='¡Gracias! Se abrirá tu correo para enviar el mensaje.';
+  /* talentos de interés (marca) */
+  $('#m-tal').innerHTML=ROSTER.map(function(r,i){return '<input type="checkbox" id="ti'+i+'" value="'+r.n+'"><label for="ti'+i+'">'+r.n+'</label>'}).join('');
+
+  /* pestañas */
+  var tabs=$$('input[name=tab]');
+  function setTab(v){
+    var r=$('#t-'+v);if(r)r.checked=true;
+    $('#p-marca').hidden=v!=='marca';$('#p-talento').hidden=v!=='talento';$('#status').textContent='';
+  }
+  tabs.forEach(function(t){t.addEventListener('change',function(){setTab(t.value)})});
+  $$('[data-tab]').forEach(function(a){a.addEventListener('click',function(){setTab(a.dataset.tab)})});
+
+  /* envío: correo o WhatsApp (sin backend; reemplazar por Formspree/servidor cuando se quiera) */
+  var EMAIL='creative.lestudio@gmail.com',WA='584241859724',form=$('#form'),st=$('#status');
+  function compose(){
+    var v=$('input[name=tab]:checked').value,pn=$('#p-'+v),ok=true,first=null,lines=[];
+    $$('input,select,textarea',pn).forEach(function(f){
+      if(f.type==='checkbox')return;
+      var val=f.value.trim();
+      f.setAttribute('aria-invalid','false');
+      var bad=(f.required&&!val)||(f.type==='email'&&val&&!/^\S+@\S+\.\S+$/.test(val));
+      if(bad){ok=false;f.setAttribute('aria-invalid','true');first=first||f}
+      if(val)lines.push(f.dataset.l+': '+val);
+    });
+    if(v==='marca'){var sel=$$('#m-tal input:checked').map(function(x){return x.value});if(sel.length)lines.push('Talentos de interés: '+sel.join(', '))}
+    if(!ok){first.focus();st.textContent='Completa los campos obligatorios (*) con datos válidos.';return null}
+    var title=v==='marca'?'Contacto de marca':'Solicitud de representación';
+    return {title:title,body:lines.join('\n')};
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();var d=compose();if(!d)return;
+    location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent('WMG web — '+d.title)+'&body='+encodeURIComponent(d.body);
+    st.textContent='¡Gracias! Se abrirá tu correo para que envíes el mensaje.';
+  });
+  $('#send-wa').addEventListener('click',function(){
+    var d=compose();if(!d)return;
+    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent('*WMG — '+d.title+'*\n'+d.body),'_blank','noopener');
+    st.textContent='¡Gracias! Se abrirá WhatsApp para enviar el mensaje.';
   });
 })();
 </script>

@@ -8,7 +8,7 @@ Sitio estático (HTML + CSS + JS, sin build). Todo vive en `index.html`; el logo
 - El símbolo (dos rombos entrelazados) se usa como patrón, máscara y elemento animado.
 
 ## Contenido por reemplazar
-Roster, cifras, correo y textos son **de ejemplo**. Edita el arreglo `ROSTER` y los `data-count` en `index.html`, y las fotos reales en cada tarjeta (`img` en el campo `img`).
+Roster real: César Oliveira. Para agregar talentos o fotos edita el arreglo `ROSTER` en `index.html` (campo `img`, ej. `assets/talentos/cesar-oliveira.webp`). Los textos de nosotros/servicios son genéricos y deben validarse.
 
 ## Local
 ```bash

@@ -530,16 +530,16 @@ body.lock{overflow:hidden}
   var ROSTER=[
     {slug:"cesar-oliveira",n:"César Oliveira",first:"César",last:"Oliveira",c:"Creator",niches:["Comedia","Lifestyle","Música"],k:["#2F2780","#6F5CFF","#17123F"],img:"assets/talentos/cesar-oliveira.webp",pos:"50% 20%",
       ig:"https://www.instagram.com/cesaaoliveira_/",igf:154000,tt:"https://www.tiktok.com/@cesaaoli",
-      p:[{n:"TikTok",f:828500,h:"@cesaaoli",u:"https://www.tiktok.com/@cesaaoli",likes:48300000,videos:587},{n:"YouTube",f:21200,h:"@Cesaaoli_",u:"https://www.youtube.com/@Cesaaoli_"}]},
+      p:[{n:"TikTok",f:828500,h:"@cesaaoli",u:"https://www.tiktok.com/@cesaaoli",likes:48300000,videos:587},{n:"YouTube",f:21200,h:"@Cesaaoli_",u:"https://www.youtube.com/@Cesaaoli_",videos:112}]},
     {slug:"viviana-de-andrade",n:"Viviana De Andrade",first:"Viviana",last:"De Andrade",c:"Creator",niches:["Belleza","Moda","Comedia"],k:["#17123F","#C9F25B","#2F2780"],img:"assets/talentos/viviana-de-andrade.webp",pos:"42% 20%",
       ig:"https://www.instagram.com/vivianadeandrade/",igf:332000,tt:"https://www.tiktok.com/@vivianadeandrade",
-      p:[{n:"TikTok",f:452200,h:"@vivianadeandrade",u:"https://www.tiktok.com/@vivianadeandrade",likes:39300000,videos:933},{n:"YouTube",f:14900,h:"@VivianaDeAndradee",u:"https://www.youtube.com/@VivianaDeAndradee"}]},
+      p:[{n:"TikTok",f:452200,h:"@vivianadeandrade",u:"https://www.tiktok.com/@vivianadeandrade",likes:39300000,videos:933},{n:"YouTube",f:14900,h:"@VivianaDeAndradee",u:"https://www.youtube.com/@VivianaDeAndradee",videos:5}]},
     {slug:"johy-alvarez",n:"Johy Alvarez",first:"Johy",last:"Alvarez",c:"Creator",niches:["Moda","Lifestyle","Comedia"],k:["#6F5CFF","#E7EBF1","#2F2780"],img:"assets/talentos/johy-alvarez.webp",pos:"60% 20%",
       ig:"https://www.instagram.com/johyalvarrez/",igf:305000,tt:"https://www.tiktok.com/@johyalvarrez",
-      p:[{n:"TikTok",f:1200000,h:"@johyalvarrez",u:"https://www.tiktok.com/@johyalvarrez",likes:45400000,videos:825},{n:"YouTube",f:10900,h:"@johyalvarrez",u:"https://www.youtube.com/@johyalvarrez"}]},
+      p:[{n:"TikTok",f:1200000,h:"@johyalvarrez",u:"https://www.tiktok.com/@johyalvarrez",likes:45400000,videos:825},{n:"YouTube",f:10900,h:"@johyalvarrez",u:"https://www.youtube.com/@johyalvarrez",videos:299}]},
     {slug:"eguita",n:"Eguita",first:"Eguita",last:"",c:"Creator",niches:["Comedia","Lifestyle","Música"],k:["#2F2780","#C9F25B","#0E0B2B"],img:"assets/talentos/eguita.webp",pos:"50% 15%",
       ig:"https://www.instagram.com/eguitaa_/",igf:137000,tt:"https://www.tiktok.com/@eguitaaa_",
-      p:[{n:"TikTok",f:429100,h:"@eguitaaa_",u:"https://www.tiktok.com/@eguitaaa_",likes:24600000,videos:399},{n:"YouTube",f:9970,h:"@Eguitaaa",u:"https://www.youtube.com/channel/UCwche8Tvn4yB76_N3JLt9gw"}]}
+      p:[{n:"TikTok",f:429100,h:"@eguitaaa_",u:"https://www.tiktok.com/@eguitaaa_",likes:24600000,videos:399},{n:"YouTube",f:9970,h:"@Eguitaaa",u:"https://www.youtube.com/channel/UCwche8Tvn4yB76_N3JLt9gw",videos:1}]}
   ];
   var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
   var mark='<svg viewBox="315 327 449 425" fill="#E7EBF1"><use href="#wm"/></svg>';
@@ -652,7 +652,7 @@ body.lock{overflow:hidden}
   function plats(r){
     var a=[];
     if(typeof r.igf==='number')a.push({n:'Instagram',f:r.igf,h:'@'+r.ig.replace(/\/$/,'').split('/').pop(),u:r.ig,x:'Perfil de Instagram'});
-    r.p.forEach(function(p){a.push({n:p.n,f:p.f,h:p.h,u:p.u,x:p.likes?compact(p.likes)+' de me gusta · '+p.videos+' videos':'Canal de YouTube',lab:p.n==='YouTube'?'Suscriptores':'Seguidores'})});
+    r.p.forEach(function(p){a.push({n:p.n,f:p.f,h:p.h,u:p.u,x:p.likes?compact(p.likes)+' de me gusta · '+p.videos+' videos':(p.videos?p.videos+(p.videos===1?' video':' videos')+' en el canal':'Canal de YouTube'),lab:p.n==='YouTube'?'Suscriptores':'Seguidores'})});
     return a;
   }
   function renderKit(i){

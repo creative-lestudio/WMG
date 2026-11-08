@@ -75,7 +75,7 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.0
 .mob a:hover{color:var(--volt)}
 
 /* hero */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;
+.hero{position:relative;min-height:84svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate;
   background:radial-gradient(900px circle at var(--mx,70%) var(--my,30%),rgba(111,92,255,.55),transparent 60%),linear-gradient(160deg,var(--indigo),var(--night) 75%)}
 .hero .grid{position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:72px 72px;
   mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000,transparent 70%)}
@@ -99,28 +99,10 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.0
 .hero-row .cta{display:flex;gap:.8rem;flex-wrap:wrap}
 .scroll-hint{position:absolute;left:var(--gutter);bottom:1.4rem}
 
-/* ticker */
-.ticker{background:var(--volt);color:var(--night);overflow:hidden;transform:rotate(-1.4deg);margin:clamp(-1rem,-1vw,0rem) -2vw 0;border-block:2px solid var(--night)}
-.tk{display:flex;width:max-content;animation:mq 32s linear infinite}
-.ticker:hover .tk{animation-play-state:paused}
-.tk span{display:flex;align-items:center;gap:1.6rem;padding:1rem 1.6rem 1rem 0;font-family:var(--display);font-weight:800;font-size:clamp(1.1rem,2.4vw,1.9rem);letter-spacing:-.03em;text-transform:uppercase;white-space:nowrap}
-.tk svg{width:1.3em;height:1.2em}.tk path{fill:var(--night)}
-@keyframes mq{to{transform:translateX(-50%)}}
-
 /* sections */
 .sec{padding-block:clamp(4rem,9vw,8rem)}
 .sh{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(2rem,4vw,3.5rem)}
-.sh h2{font-size:clamp(2.4rem,6vw,5.6rem);max-width:12ch;margin-top:1rem}
-.sh p{max-width:26rem;color:var(--mute)}
-
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
-.st{background:var(--night);padding:clamp(1.4rem,3vw,2.6rem);transition:background .4s}
-.st:hover{background:var(--deep)}
-.st b{display:block;font-family:var(--display);font-size:clamp(2.6rem,6vw,5.4rem);letter-spacing:-.06em;line-height:1;font-variant-numeric:tabular-nums}
-.st b i{font-style:normal;color:var(--volt)}
-.st b span{display:inline;margin:0;font:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
-.st>span{display:block;margin-top:.8rem;color:var(--mute);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+.sh h2{font-size:clamp(2.4rem,6vw,5.6rem);max-width:none;margin-top:1rem}
 
 /* roster */
 .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
@@ -160,44 +142,31 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.02;letter-spacing:-.0
 .wa svg{width:22px;height:22px;fill:currentColor}
 @media(max-width:560px){.wa span{display:none}.wa{padding:.9rem}}
 
-/* about */
-.about{background:var(--ice);color:var(--night);border-radius:var(--r) var(--r) 0 0}
-.about .tag{color:var(--indigo)}
-.ab{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,6vw,7rem);align-items:start}
-.about h2{font-size:clamp(2.4rem,6vw,5.6rem);margin-top:1rem}
-.about h2 em{font-style:normal;color:var(--violet)}
-.about p.lead{font-size:clamp(1.05rem,1.5vw,1.3rem);color:#2a2750;margin-bottom:1.2rem}
-.pill{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:clamp(2rem,4vw,3.5rem)}
-.pill div{background:var(--indigo);color:var(--ice);border-radius:var(--r);padding:1.6rem;position:relative;overflow:hidden;transition:transform .4s var(--ease)}
-.pill div:hover{transform:translateY(-6px)}
-.pill div::after{content:"";position:absolute;width:160px;height:150px;right:-40px;bottom:-40px;opacity:.1;background:var(--ice);clip-path:polygon(0 50%,37% 0,50% 18%,63% 0,100% 50%,63% 100%,50% 82%,37% 100%)}
-.pill h3{font-size:1.5rem;margin-bottom:.6rem}
-.pill p{color:#c9cdf0;font-size:.95rem}
+.card .in{pointer-events:none}
+.nich{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
+.nich span{font-size:.66rem;font-weight:600;letter-spacing:.03em;padding:.22rem .6rem;border-radius:999px;background:rgba(231,235,241,.16);color:var(--ice);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 
-/* services bento */
-.svc{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(.7rem,1.4vw,1.2rem)}
-.sv{position:relative;border-radius:var(--r);padding:clamp(1.4rem,2.4vw,2.2rem);min-height:280px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid var(--line);background:var(--deep);transition:transform .5s var(--ease),border-color .3s}
-.sv:hover{transform:translateY(-6px);border-color:var(--volt)}
-.sv:nth-child(1){grid-column:span 3;background:var(--indigo)}
-.sv:nth-child(2){grid-column:span 3}
-.sv:nth-child(3){grid-column:span 2}
-.sv:nth-child(4){grid-column:span 2;background:var(--volt);color:var(--night);border-color:var(--volt)}
-.sv:nth-child(5){grid-column:span 2}
-.sv .n{font-family:var(--display);font-weight:700;font-size:.85rem;opacity:.7}
-.sv h3{font-size:clamp(1.5rem,2.4vw,2.2rem);margin-bottom:.7rem}
-.sv p{color:var(--mute);font-size:.95rem;max-width:30ch}
-.sv:nth-child(4) p{color:#27310a}
-.sv .ic{position:absolute;right:-30px;top:-30px;width:150px;opacity:.12;transition:transform .8s var(--ease)}
-.sv:hover .ic{transform:rotate(90deg) scale(1.15)}
-.sv .ic{fill:currentColor}
-
-/* process */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:s}
-.step{border-top:2px solid var(--ice);padding-top:1.2rem;counter-increment:s}
-.step::before{content:"0" counter(s);font-family:var(--display);font-weight:800;font-size:3.2rem;letter-spacing:-.05em;color:var(--volt);display:block;margin-bottom:.6rem}
-.step h3{font-size:1.3rem;margin-bottom:.5rem}
-.step p{color:var(--mute);font-size:.95rem}
-
+/* números */
+.nums{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.nm{background:var(--night);padding:clamp(1.1rem,2.4vw,2rem) var(--gutter)}
+.nm:first-child{padding-left:max(var(--gutter),calc((100vw - 1560px)/2 + var(--gutter)))}
+.nm b{display:block;white-space:nowrap;font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,5vw,4.6rem);line-height:.95;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.nm:first-child b{color:var(--volt)}
+.nm span{display:block;margin-top:.5rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--mute)}
+/* servicios */
+.svc2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.8rem,1.6vw,1.4rem)}
+.sv2{display:flex;flex-direction:column;gap:1.2rem;align-items:flex-start;padding:clamp(1.5rem,3vw,2.6rem);border-radius:var(--r);background:var(--indigo)}
+.sv2.alt{background:var(--deep);border:1px solid var(--line)}
+.sv2 h3{font-size:clamp(1.7rem,3.2vw,2.8rem)}
+.sv2 ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;flex:1}
+.sv2 li{display:flex;gap:.7rem;align-items:baseline;font-size:1.05rem}
+.sv2 li::before{content:"";flex:none;width:.5rem;height:.5rem;background:var(--volt);transform:rotate(45deg)}
+.cnt{position:absolute;z-index:2;top:1rem;left:1rem;padding:.4rem .8rem;border-radius:999px;background:rgba(14,11,43,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-family:var(--display);font-weight:700;font-size:.9rem;letter-spacing:-.02em;pointer-events:none}
+.cnt small{font-family:var(--body);font-weight:500;font-size:.7rem;color:var(--mute);margin-left:.3rem}
+@media(max-width:980px){.nums{grid-template-columns:repeat(3,1fr)}.nm:first-child{padding-left:var(--gutter);grid-column:1/-1}.nm{padding-inline:var(--gutter)}}
+@media(max-width:480px){.nm b{font-size:2.1rem}.nm{padding-inline:1rem}.nm span{letter-spacing:.08em;font-size:.7rem}}
+@media(max-width:720px){.svc2{grid-template-columns:1fr}}
+@media(max-width:560px){.cnt small{display:none}}
 /* contact */
 .contact{background:linear-gradient(160deg,var(--indigo),var(--deep));border-radius:var(--r) var(--r) 0 0;position:relative;overflow:hidden}
 .ct{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,6vw,7rem);align-items:start}
@@ -239,81 +208,70 @@ body.lock{overflow:hidden}
 .kbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--gutter);background:linear-gradient(var(--night) 60%,transparent)}
 .kx{display:inline-flex;gap:.6rem;align-items:center;border:1px solid var(--line);border-radius:999px;padding:.65rem 1.1rem;font-size:.85rem;font-weight:600;transition:.25s}
 .kx:hover{background:var(--ice);color:var(--night)}
-.khero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,5rem);align-items:center;padding-top:.5rem}
-.chip{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem;color:var(--volt);margin-bottom:1.4rem}
+.khero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,5rem);align-items:center;padding-top:.5rem}
+.chip{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem;color:var(--volt);margin-bottom:1.3rem}
 .chip i{width:.5rem;height:.5rem;background:var(--volt);transform:rotate(45deg)}
-.khero h2{font-size:clamp(3rem,9vw,8.6rem);line-height:.92;letter-spacing:-.055em;font-weight:800}
+.khero h2{font-size:clamp(2.8rem,8vw,7.4rem);line-height:.92;letter-spacing:-.055em;font-weight:800}
 .khero h2 span{display:block}.khero h2 span+span{color:var(--volt)}
-.khero .tag2{margin-top:1.5rem;max-width:30rem;color:#cfd2ea;font-size:1.08rem}
-.facts{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.8rem}
-.fact{display:flex;align-items:center;gap:.6rem;padding:.6rem 1rem .6rem .8rem;border:1px solid var(--line);border-radius:999px;background:rgba(231,235,241,.05)}
-.fact b{font-family:var(--display);font-size:1.05rem;letter-spacing:-.03em}
-.fact small{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
-.ico{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.pills{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.4rem}
+.pills span{padding:.55rem 1.05rem;border-radius:999px;background:var(--ice);color:var(--night);font-weight:600;font-size:.9rem}
+.tot{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-top:clamp(1.6rem,3vw,2.6rem);padding-top:clamp(1.2rem,2vw,1.8rem);border-top:1px solid var(--line)}
+.tot b{font-family:var(--display);font-weight:800;font-size:clamp(4rem,11vw,9rem);line-height:.85;letter-spacing:-.07em;color:var(--volt);font-variant-numeric:tabular-nums}
+.tot span{font-size:1rem;color:#cfd2ea;max-width:11rem;line-height:1.35}
 .kph{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--indigo);box-shadow:0 40px 90px -30px rgba(111,92,255,.7)}
 .kph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.kph::after{content:"";position:absolute;inset:auto 0 0;height:30%;background:linear-gradient(transparent,rgba(14,11,43,.55))}
-.ksec{padding-top:clamp(3rem,6vw,6rem)}
-.kh{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(1.4rem,3vw,2.4rem)}
-.kh h3{font-size:clamp(1.8rem,3.8vw,3.4rem);max-width:14em;margin-top:.9rem}
-.kh p{max-width:26rem;color:var(--mute);font-size:.95rem}
-.niche{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1rem}
-.nc{border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.2rem,2.4vw,2rem);background:var(--deep);transition:transform .4s var(--ease),border-color .3s}
-.nc:hover{transform:translateY(-5px);border-color:var(--volt)}
-.nc .n{font-family:var(--display);font-weight:700;font-size:.85rem;color:var(--volt)}
-.nc h4{font-family:var(--display);font-size:1.7rem;letter-spacing:-.04em;margin:.7rem 0 .5rem}
-.nc p{color:var(--mute);font-size:.95rem}
-.sheet{background:var(--ice);color:var(--night);border-radius:var(--r);padding:clamp(1.3rem,4vw,3.6rem)}
-.sheet .tag{color:var(--indigo)}
-.sheet .kh p{color:#4a4770}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.cd{border:1px solid rgba(23,18,63,.16);border-radius:calc(var(--r) * .7);padding:clamp(1.2rem,2.2vw,1.9rem)}
-.cd h4{font-family:var(--body);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:#4a4770;margin-bottom:1.3rem}
-.total{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.4rem;align-items:center}
-.donut{width:clamp(130px,14vw,170px);aspect-ratio:1;position:relative}
-.donut svg{width:100%;height:100%;transform:rotate(-90deg)}
-.donut circle{fill:none;stroke-width:15}.donut .bgc{stroke:#d5d9e6}
-.donut .seg{stroke-dasharray:0 302;transition:stroke-dasharray 1.3s var(--ease) .25s}
-.kit.open .donut .seg{stroke-dasharray:var(--d) 302}
-.donut .mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#4a4770;line-height:1.3}
-.donut .mid b{display:block;font-family:var(--display);font-size:1.5rem;letter-spacing:-.05em;color:var(--night);text-transform:none}
-.legend{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
-.legend li{display:grid;grid-template-columns:12px 1fr auto;gap:.7rem;align-items:center;font-size:.92rem}
-.legend i{width:12px;height:12px;border-radius:50%}.legend b{font-variant-numeric:tabular-nums}
-.bars{display:grid;gap:1.1rem}
-.bar{display:grid;grid-template-columns:7rem minmax(0,1fr) auto;gap:.9rem;align-items:center;font-size:.9rem}
-.bar .lb{display:flex;align-items:center;gap:.5rem;font-weight:600}.bar .lb svg{width:18px;height:18px}
-.bar .tr{height:12px;border-radius:99px;background:#d5d9e6;overflow:hidden}
-.bar .tr i{display:block;height:100%;border-radius:99px;background:var(--indigo);transform-origin:left;transform:scaleX(0);transition:transform 1.3s var(--ease) .25s}
-.kit.open .bar .tr i{transform:scaleX(var(--v))}
-.bar b{font-variant-numeric:tabular-nums}
-.plats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1rem;margin-top:1rem}
-.pl{border-radius:calc(var(--r) * .7);background:var(--indigo);color:var(--ice);padding:clamp(1.3rem,2.2vw,1.9rem);display:grid;gap:.5rem;align-content:start;transition:transform .4s var(--ease)}
-.pl:hover{transform:translateY(-5px)}
-.pl .top{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600}
-.pl .top span{display:inline-flex;align-items:center;gap:.6rem}
-.pl .top a{color:var(--volt);letter-spacing:0;text-transform:none;font-size:.82rem}
-.pl b{font-family:var(--display);font-size:clamp(2.4rem,4.4vw,3.9rem);line-height:1;letter-spacing:-.055em;margin-top:.7rem}
-.pl small{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#b9bdf0}
-.pl p{font-size:.92rem;color:#d3d6f5;margin-top:.5rem}
-.note{margin-top:1.4rem;font-size:.8rem;color:#4a4770}
-.kcta{margin-top:clamp(3rem,6vw,6rem);padding:clamp(1.8rem,5vw,4rem);border-radius:var(--r);background:var(--volt);color:var(--night);display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
-.kcta h3{font-size:clamp(1.9rem,4vw,3.6rem)}
+.ksec{padding-top:clamp(2rem,4vw,3.5rem)}
+.klabel{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--mute)}
+.klabel b{color:var(--ice);font-weight:600}
+.kstats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.2vw,1rem)}
+.ks{position:relative;display:flex;flex-direction:column;gap:.35rem;min-height:240px;padding:clamp(1.1rem,2vw,1.7rem);border-radius:var(--r);background:var(--deep);border:1px solid var(--line);transition:transform .4s var(--ease),border-color .3s}
+a.ks:hover{transform:translateY(-5px);border-color:var(--volt)}
+.ks .top{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.ks .top span{display:inline-flex;align-items:center;gap:.55rem}
+.ks .top i{font-style:normal;font-size:1rem}
+.ks b{white-space:nowrap;margin-top:auto;font-family:var(--display);font-weight:800;font-size:clamp(2.7rem,5vw,4.6rem);line-height:.95;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.ks small{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;opacity:.75}
+.ks .meta{font-size:.88rem;opacity:.8;margin-top:.2rem}
+.ks.top1{background:var(--volt);color:var(--night);border-color:var(--volt)}
+.ks.lk{background:var(--indigo)}
+.ks.lk b{color:var(--volt)}
+.share{margin-top:clamp(1rem,2vw,1.6rem)}
+.bar{display:flex;height:16px;border-radius:99px;overflow:hidden;background:rgba(231,235,241,.1);gap:3px}
+.bar i{display:block;height:100%;transform-origin:left;transform:scaleX(0);transition:transform 1.2s var(--ease) .2s}
+.kit.open .bar i{transform:none}
+.leg{display:flex;gap:.5rem 1.6rem;flex-wrap:wrap;margin-top:.9rem;font-size:.92rem}
+.leg span{display:inline-flex;align-items:center;gap:.5rem;color:#cfd2ea}
+.leg i{width:11px;height:11px;border-radius:50%}
+.leg b{color:var(--ice);font-variant-numeric:tabular-nums}
+.niche{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:.8rem}
+.nc{border:1px solid var(--line);border-radius:calc(var(--r) * .8);padding:1.2rem 1.3rem;background:rgba(231,235,241,.03)}
+.nc h4{font-family:var(--display);font-size:1.35rem;letter-spacing:-.04em;margin:0 0 .35rem;display:flex;align-items:center;gap:.6rem}
+.nc h4::before{content:"";width:.5rem;height:.5rem;background:var(--volt);transform:rotate(45deg)}
+.nc p{color:var(--mute);font-size:.92rem}
+.note{margin-top:1.2rem;font-size:.78rem;color:var(--mute)}
+.kcta{margin-top:clamp(2.4rem,5vw,4.5rem);padding:clamp(1.6rem,4vw,3.4rem);border-radius:var(--r);background:var(--volt);color:var(--night);display:flex;justify-content:space-between;align-items:center;gap:1.6rem;flex-wrap:wrap}
+.kcta h3{font-size:clamp(1.8rem,4vw,3.4rem)}
+.kcta .acts{display:flex;gap:.6rem;flex-wrap:wrap}
 .kcta .btn{border-color:var(--night);background:var(--night);color:var(--ice)}
 .kcta .btn:hover{background:transparent;color:var(--night)}
-.knext{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:2rem 0 3rem;font-size:.85rem;color:var(--mute)}
+.kcta .btn.o{background:transparent;color:var(--night)}
+.kcta .btn.o:hover{background:var(--night);color:var(--ice)}
+.knext{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:1.8rem 0 5.5rem;font-size:.85rem;color:var(--mute)}
 .knext div{display:flex;gap:.5rem;flex-wrap:wrap}
 .knext button{border:1px solid var(--line);border-radius:999px;padding:.6rem 1.05rem;font-size:.85rem;font-weight:500;color:var(--ice);transition:.25s}
 .knext button:hover{background:var(--ice);color:var(--night)}
-@media(max-width:860px){.khero{grid-template-columns:1fr}.kph{max-width:420px}.cards{grid-template-columns:1fr}}
-@media(max-width:480px){.total{grid-template-columns:1fr;justify-items:center}.bar{grid-template-columns:5.6rem minmax(0,1fr) auto}}
+.kfloat{position:sticky;bottom:1rem;z-index:6;display:flex;justify-content:flex-end;padding:0 var(--gutter);margin-top:-4.2rem;pointer-events:none;height:3.4rem}
+.kfloat{transition:opacity .3s,transform .3s}.kfloat.off{opacity:0;transform:translateY(12px)}.kfloat.off .btn{pointer-events:none}
+.kfloat .btn{padding:.8rem 1.2rem;font-size:.85rem;pointer-events:auto;align-self:flex-end;box-shadow:0 14px 34px -10px rgba(0,0,0,.7)}
+.ico{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+@media(max-width:980px){.kstats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){.khero{grid-template-columns:1fr}.kph{max-width:440px;order:-1}}
+@media(max-width:480px){.ks{min-height:190px}.kstats{gap:.5rem}.ks b{font-size:2.35rem}.ks .top{font-size:.7rem}.ks .meta{font-size:.8rem}}
 /* footer */
 .ft{background:var(--deep);padding-block:clamp(2.5rem,5vw,4rem) 1.6rem}
-.big-w{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,12.2vw,14rem);letter-spacing:-.07em;line-height:.85;color:#3A31A0;white-space:nowrap;overflow:hidden;margin-bottom:2rem;user-select:none}
 .ft-g{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;color:var(--mute);font-size:.9rem}
 .ft-g a:hover{color:var(--volt)}
 .ft-g nav{display:flex;gap:1.4rem;flex-wrap:wrap}
-.cp{margin-top:1.6rem;padding-top:1.2rem;border-top:1px solid var(--line);color:var(--mute);font-size:.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
@@ -334,7 +292,7 @@ body.lock{overflow:hidden}
   .nav{display:none}.burger{display:block}
   .svc{grid-template-columns:1fr}.sv:nth-child(n){grid-column:auto;min-height:220px}
   .steps{grid-template-columns:1fr}
-  .dia.b{right:55vw}
+  .dia.b{display:none}
   .hero-row .cta .btn{flex:1;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){
@@ -355,14 +313,14 @@ body.lock{overflow:hidden}
       <span>WMG<small>WORLD MANAGEMENT GROUP</small></span>
     </a>
     <nav class="nav" aria-label="Principal">
-      <a href="#roster">Talentos</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a>
-      <a class="btn volt" href="#contacto">Hablemos <span class="ar">↗</span></a>
+      <a href="#roster">Roster</a><a href="#servicios">Servicios</a>
+      <a class="btn volt" href="#contacto">Contactar <span class="ar">↗</span></a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
   </div>
 </header>
 <div class="mob" id="mob">
-  <a href="#roster">Talentos</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#contacto" class="hl">Hablemos ↗</a>
+  <a href="#roster">Roster</a><a href="#servicios">Servicios</a><a href="#contacto" class="hl">Contactar ↗</a>
 </div>
 
 <main id="top">
@@ -372,76 +330,49 @@ body.lock{overflow:hidden}
   <div class="dia b"><svg viewBox="315 327 449 425"><use href="#wm"/></svg></div>
   <div class="dia c"><svg viewBox="0 0 100 100"><path d="M50 4 96 50 50 96 4 50Z"/></svg></div>
   <div class="wrap hero-in">
-    <div class="tag" style="margin-bottom:1.6rem">Agencia de representación de talentos</div>
-    <h1 aria-label="Talento sin fronteras">
-      <span><b style="--i:0">Talento</b></span>
-      <span><b style="--i:1" class="out">sin</b></span>
-      <span><b style="--i:2">fronteras<i class="hl" style="font-style:normal">.</i></b></span>
+    <div class="tag" style="margin-bottom:1.6rem">Agencia de representación de creadores</div>
+    <h1 aria-label="Creadores con audiencia real">
+      <span><b style="--i:0">Creadores</b></span>
+      <span><b style="--i:1" class="out">con audiencia</b></span>
+      <span><b style="--i:2">real<i class="hl" style="font-style:normal">.</i></b></span>
     </h1>
     <div class="hero-row">
-      <p>Representamos a creadores, artistas y modelos que mueven la cultura, y los conectamos con las marcas y oportunidades que los llevan más lejos.</p>
+      <p>Comedia, lifestyle, moda, belleza y música. Conectamos marcas con los creadores que su público ya sigue.</p>
       <div class="cta">
-        <a class="btn volt" href="#roster">Ver talentos <span class="ar">↓</span></a>
-        <a class="btn line" href="#contacto">Trabaja con nosotros</a>
+        <a class="btn volt" href="#roster">Ver roster <span class="ar">↓</span></a>
+        <a class="btn line" href="#contacto">Contactar</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true"><div class="tk" id="tk"></div></div>
+<div class="nums" id="nums" aria-label="Alcance total del roster"></div>
 
 <section class="sec" id="roster">
   <div class="wrap">
     <div class="sh">
-      <div class="rv"><div class="tag">Roster</div><h2>Las caras de <span class="hl">WMG</span></h2></div>
-      <p class="rv">Un roster curado de talento con identidad propia, audiencias reales y estándares de producción de primer nivel.</p>
+      <div class="rv"><div class="tag">Roster</div><h2>Nuestros <span class="hl">creadores</span></h2></div>
     </div>
     <div class="filters rv" id="filters" role="group" aria-label="Filtrar talentos"></div>
     <div class="roster" id="roster-g"></div>
   </div>
 </section>
 
-<section class="about sec" id="nosotros">
+<section class="sec" id="servicios" style="padding-top:0">
   <div class="wrap">
-    <div class="ab">
-      <div class="rv"><div class="tag">Nosotros</div><h2>Dos mundos, <em>una</em> estrategia.</h2></div>
-      <div class="rv" style="--d:.1s">
-        <p class="lead">World Management Group es una agencia de representación que une talento y oportunidad. Como los dos rombos de nuestro símbolo, trabajamos en conjunto con cada talento para que su carrera crezca sin límites geográficos ni de plataforma.</p>
-        <p class="lead">Gestionamos contratos, alianzas de marca y desarrollo de carrera con un enfoque cercano, estratégico y global.</p>
+    <div class="svc2">
+      <div class="sv2 rv">
+        <span class="tag">Para marcas</span>
+        <h3>Encuentra al creador ideal</h3>
+        <ul><li>Creadores por nicho y audiencia</li><li>Propuesta y negociación directa</li><li>Seguimiento de la campaña</li></ul>
+        <a class="btn volt" href="#contacto" data-tab="marca">Pedir propuesta <span class="ar">↗</span></a>
       </div>
-    </div>
-    <div class="pill">
-      <div class="rv"><h3>Misión</h3><p>Impulsar carreras con estrategia a largo plazo, construyendo audiencias leales y alianzas que perduran.</p></div>
-      <div class="rv" style="--d:.1s"><h3>Visión</h3><p>Ser el puente global entre el mejor talento y las marcas que quieren trabajar con él.</p></div>
-      <div class="rv" style="--d:.2s"><h3>Valores</h3><p>Cercanía, transparencia, exclusividad y ambición compartida entre agencia y talento.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="servicios">
-  <div class="wrap">
-    <div class="sh">
-      <div class="rv"><div class="tag">Servicios</div><h2>Todo lo que tu carrera <span class="hl">necesita</span></h2></div>
-      <p class="rv">Cinco frentes de trabajo para talentos y marcas.</p>
-    </div>
-    <div class="svc">
-      <article class="sv rv"><svg class="ic" viewBox="315 327 449 425"><use href="#wm"/></svg><span class="n">01</span><div><h3>Representación de talentos</h3><p>Management integral: contratos, agenda y estrategia de carrera.</p></div></article>
-      <article class="sv rv" style="--d:.08s"><svg class="ic" viewBox="315 327 449 425"><use href="#wm"/></svg><span class="n">02</span><div><h3>Alianzas con marcas</h3><p>Emparejamos marcas y creadores con criterio, para campañas que se sienten auténticas.</p></div></article>
-      <article class="sv rv"><svg class="ic" viewBox="315 327 449 425"><use href="#wm"/></svg><span class="n">03</span><div><h3>Desarrollo de marca personal</h3><p>Posicionamiento, contenido y media kit.</p></div></article>
-      <article class="sv rv" style="--d:.08s"><svg class="ic" viewBox="315 327 449 425"><use href="#wm"/></svg><span class="n">04</span><div><h3>Eventos y experiencias</h3><p>Producción y activaciones con talento.</p></div></article>
-      <article class="sv rv" style="--d:.16s"><svg class="ic" viewBox="315 327 449 425"><use href="#wm"/></svg><span class="n">05</span><div><h3>Expansión internacional</h3><p>Abrimos mercados y puertas fuera de casa.</p></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="sec" id="proceso" style="padding-top:0">
-  <div class="wrap">
-    <div class="sh"><div class="rv"><div class="tag">Proceso</div><h2>Cómo <span class="out">trabajamos</span></h2></div></div>
-    <div class="steps">
-      <div class="step rv"><h3>Conocernos</h3><p>Entendemos tu historia, tus metas y tu audiencia.</p></div>
-      <div class="step rv" style="--d:.08s"><h3>Estrategia</h3><p>Diseñamos un plan a medida de carrera y contenido.</p></div>
-      <div class="step rv" style="--d:.16s"><h3>Conexión</h3><p>Te presentamos a marcas y proyectos alineados contigo.</p></div>
-      <div class="step rv" style="--d:.24s"><h3>Crecimiento</h3><p>Medimos, ajustamos y escalamos a nivel global.</p></div>
+      <div class="sv2 alt rv" style="--d:.1s">
+        <span class="tag">Para creadores</span>
+        <h3>Haz crecer tu carrera</h3>
+        <ul><li>Alianzas con marcas</li><li>Gestión de contratos</li><li>Estrategia de crecimiento</li></ul>
+        <a class="btn" href="#contacto" data-tab="talento">Aplicar <span class="ar">↗</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -450,9 +381,8 @@ body.lock{overflow:hidden}
   <div class="wrap ct">
     <div class="rv">
       <div class="tag">Contacto</div>
-      <h2>Hagamos algo <span class="hl">grande.</span></h2>
-      <p class="cl">¿Eres una marca que busca talento, o un creador que quiere ser representado? Cuéntanos y te respondemos pronto.</p>
-      <div style="display:grid;gap:.9rem;justify-items:start;margin-top:1.8rem">
+      <h2>Hablemos<span class="hl">.</span></h2>
+      <div style="display:grid;gap:.9rem;justify-items:start">
         <a class="ig" href="https://www.instagram.com/worldmanagementgroup/" target="_blank" rel="noopener">@worldmanagementgroup ↗</a>
         <a class="ig" href="mailto:creative.lestudio@gmail.com">creative.lestudio@gmail.com</a>
         <a class="ig" href="https://wa.me/584241859724" target="_blank" rel="noopener">WhatsApp +58 424 185 9724</a>
@@ -471,14 +401,14 @@ body.lock{overflow:hidden}
         </div>
         <div class="row">
           <div class="f"><label for="m-cor">Correo *</label><input id="m-cor" data-l="Correo" type="email" autocomplete="email" required></div>
-          <div class="f"><label for="m-tel">WhatsApp / teléfono</label><input id="m-tel" data-l="Teléfono" type="text" autocomplete="tel"></div>
+          <div class="f"><label for="m-tel">WhatsApp</label><input id="m-tel" data-l="Teléfono" type="text" autocomplete="tel"></div>
         </div>
         <div class="row">
           <div class="f"><label for="m-tip">Tipo de proyecto</label><select id="m-tip" data-l="Proyecto"><option value="">Selecciona…</option><option>Campaña con creadores</option><option>Embajador de marca</option><option>Evento / activación</option><option>Contenido UGC</option><option>Otro</option></select></div>
           <div class="f"><label for="m-pre">Presupuesto aproximado</label><select id="m-pre" data-l="Presupuesto"><option value="">Selecciona…</option><option>Menos de $1.000</option><option>$1.000 – $5.000</option><option>$5.000 – $15.000</option><option>Más de $15.000</option><option>Por definir</option></select></div>
         </div>
         <fieldset class="f"><legend>Talentos de interés</legend><div class="chips" id="m-tal"></div></fieldset>
-        <div class="f"><label for="m-msg">Cuéntanos sobre tu proyecto *</label><textarea id="m-msg" data-l="Mensaje" rows="4" required></textarea></div>
+        <div class="f"><label for="m-msg">Mensaje</label><textarea id="m-msg" data-l="Mensaje" rows="3"></textarea></div>
       </div>
 
       <div class="panel" id="p-talento" data-title="Talento" hidden>
@@ -488,7 +418,7 @@ body.lock{overflow:hidden}
         </div>
         <div class="row">
           <div class="f"><label for="t-tel">WhatsApp *</label><input id="t-tel" data-l="WhatsApp" type="text" autocomplete="tel" required></div>
-          <div class="f"><label for="t-pais">País / ciudad</label><input id="t-pais" data-l="Ubicación" type="text"></div>
+          
         </div>
         <div class="row">
           <div class="f"><label for="t-ig">Instagram *</label><input id="t-ig" data-l="Instagram" type="text" placeholder="@usuario" required></div>
@@ -498,7 +428,7 @@ body.lock{overflow:hidden}
           <div class="f"><label for="t-seg">Seguidores (total aprox.)</label><select id="t-seg" data-l="Seguidores"><option value="">Selecciona…</option><option>Menos de 10 mil</option><option>10 mil – 50 mil</option><option>50 mil – 200 mil</option><option>200 mil – 1 millón</option><option>Más de 1 millón</option></select></div>
           <div class="f"><label for="t-cat">Tipo de contenido</label><select id="t-cat" data-l="Contenido"><option value="">Selecciona…</option><option>Lifestyle</option><option>Moda / modelaje</option><option>Belleza</option><option>Música</option><option>Humor / entretenimiento</option><option>Otro</option></select></div>
         </div>
-        <div class="f"><label for="t-msg">Cuéntanos sobre ti y tus metas *</label><textarea id="t-msg" data-l="Mensaje" rows="4" required></textarea></div>
+        <div class="f"><label for="t-msg">Mensaje</label><textarea id="t-msg" data-l="Mensaje" rows="3"></textarea></div>
       </div>
 
       <div class="fb">
@@ -513,12 +443,10 @@ body.lock{overflow:hidden}
 
 <footer class="ft">
   <div class="wrap">
-    <div class="big-w" aria-hidden="true">WORLD MGMT</div>
     <div class="ft-g">
-      <nav aria-label="Pie"><a href="#roster">Talentos</a><a href="#nosotros">Nosotros</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a><a href="https://www.instagram.com/worldmanagementgroup/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/584241859724" target="_blank" rel="noopener">WhatsApp</a></nav>
-      <a href="#top">Volver arriba ↑</a>
+      <nav aria-label="Pie"><a href="#roster">Roster</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a><a href="https://www.instagram.com/worldmanagementgroup/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/584241859724" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:creative.lestudio@gmail.com">Correo</a></nav>
+      <span>© 2026 World Management Group</span>
     </div>
-    <div class="cp"><span>© 2026 World Management Group. Todos los derechos reservados.</span></div>
   </div>
 </footer>
 
@@ -529,7 +457,7 @@ body.lock{overflow:hidden}
   /* ===== ROSTER: agrega nuevos talentos aquí (y su foto con img:"assets/talentos/x.webp") ===== */
   var STATS_DATE="8 nov 2026"; /* fecha de las cifras públicas */
   var ROSTER=[
-    {slug:"cesar-oliveira",n:"César Oliveira",first:"César",last:"Oliveira",c:"Creator",niches:["Comedia","Lifestyle","Música"],k:["#2F2780","#6F5CFF","#17123F"],img:"assets/talentos/cesar-oliveira.webp",pos:"50% 20%",
+    {slug:"cesar-oliveira",n:"César Oliveira",first:"César",last:"Oliveira",c:"Creator",niches:["Comedia","Lifestyle","Música"],k:["#2F2780","#6F5CFF","#17123F"],img:"assets/talentos/cesar-oliveira.webp",pos:"50% 28%",
       ig:"https://www.instagram.com/cesaaoliveira_/",igf:154000,tt:"https://www.tiktok.com/@cesaaoli",
       p:[{n:"TikTok",f:828500,h:"@cesaaoli",u:"https://www.tiktok.com/@cesaaoli",likes:48300000,videos:587},{n:"YouTube",f:21200,h:"@Cesaaoli_",u:"https://www.youtube.com/@Cesaaoli_",videos:112}]},
     {slug:"viviana-de-andrade",n:"Viviana De Andrade",first:"Viviana",last:"De Andrade",c:"Creator",niches:["Belleza","Moda","Comedia"],k:["#17123F","#C9F25B","#2F2780"],img:"assets/talentos/viviana-de-andrade.webp",pos:"42% 20%",
@@ -545,10 +473,6 @@ body.lock{overflow:hidden}
   var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
   var mark='<svg viewBox="315 327 449 425" fill="#E7EBF1"><use href="#wm"/></svg>';
 
-  /* ticker */
-  var words=["Creadores","Artistas","Modelos","Marcas","Alcance global","Representación"],t="";
-  for(var i=0;i<2;i++)words.forEach(function(w){t+='<span>'+w+'<svg viewBox="0 0 100 100"><path d="M50 0 100 50 50 100 0 50Z"/></svg></span>'});
-  $('#tk').innerHTML=t+t;
 
   /* roster */
   var cats=["Todos"].concat(ROSTER.map(function(r){return r.c}).filter(function(v,i,a){return a.indexOf(v)===i}));
@@ -558,10 +482,10 @@ body.lock{overflow:hidden}
     return '<article class="card" data-c="'+r.c+'" style="--c1:'+r.k[0]+';--c2:'+r.k[1]+';--c3:'+r.k[2]+'">'+
       '<div class="bg"></div>'+(r.img?'<img src="'+r.img+'" alt="'+r.n+'" loading="lazy" style="object-position:'+(r.pos||'50% 20%')+'">':'<span class="mk">'+mark+'</span><span class="ini">'+ini+'</span>')+
       '<button class="stretch" type="button" data-i="'+ROSTER.indexOf(r)+'" aria-label="Ver media kit de '+r.n+'"></button>'+
-      '<span class="go">↗</span><div class="in"><span class="cat">'+r.c+'</span><b>'+r.n+'</b>'+
-      '<div class="soc"><a href="'+r.ig+'" target="_blank" rel="noopener">Instagram</a><a href="'+r.tt+'" target="_blank" rel="noopener">TikTok</a></div></div></article>';
+      '<span class="cnt">'+compact(r.p.reduce(function(a,x){return a+x.f},0)+(r.igf||0))+'<small>seguidores</small></span><span class="go">↗</span><div class="in"><b>'+r.n+'</b>'+
+      '<div class="nich">'+r.niches.map(function(n){return '<span>'+n+'</span>'}).join('')+'</div></div></article>';
   }).join('')+
-  '<a class="card join" href="#contacto" data-tab="talento"><span class="mk">'+mark+'</span><div class="in"><span class="cat">¿Eres talento?</span><b>Sé parte de WMG <span class="hl">↗</span></b></div></a>';
+  '<a class="card join" href="#contacto" data-tab="talento"><span class="mk">'+mark+'</span><div class="in"><span class="cat">¿Eres creador?</span><b>Aplica para ser representado <span class="hl">↗</span></b></div></a>';
   var fl=$('#filters');
   if(cats.length<=2)fl.hidden=true;
   fl.innerHTML=cats.map(function(c,i){return '<button class="fl'+(i?'':' on')+'" type="button" aria-pressed="'+(!i)+'" data-f="'+c+'">'+c+'</button>'}).join('');
@@ -636,19 +560,21 @@ body.lock{overflow:hidden}
     st.textContent='¡Gracias! Se abrirá WhatsApp para enviar el mensaje.';
   });
 
+  /* números globales del roster */
+  (function(){
+    var sum=function(f){return ROSTER.reduce(function(a,r){return a+f(r)},0)},
+        pl=function(n){return sum(function(r){return r.p.filter(function(p){return p.n===n}).reduce(function(a,p){return a+p.f},0)})},
+        ig=sum(function(r){return r.igf||0}),tk=pl('TikTok'),yt=pl('YouTube');
+    $('#nums').innerHTML='<div class="nm"><b>'+compact(ig+tk+yt)+'</b><span>Seguidores · '+ROSTER.length+' creadores</span></div>'+
+      '<div class="nm"><b>'+compact(tk)+'</b><span>TikTok</span></div><div class="nm"><b>'+compact(ig)+'</b><span>Instagram</span></div><div class="nm"><b>'+compact(yt)+'</b><span>YouTube</span></div>';
+  })();
+
   /* ===== MEDIA KIT ===== */
   var kit=$('#kit'),kOpen=-1,kLast=null;
   var esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
   var PI={Instagram:'<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7"/>',TikTok:'<path d="M14 4v10.2a3.4 3.4 0 1 1-3.4-3.4"/><path d="M14 4c.4 2.4 2 4 4.6 4.2"/>',YouTube:'<rect x="2.5" y="6" width="19" height="12" rx="4"/><path d="M10.5 9.6v4.8l4.4-2.4z"/>'};
   var ico=function(n){return '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">'+(PI[n]||'')+'</svg>'};
   function compact(n){var f=function(v,u){return (Math.round(v*10)/10).toString().replace('.',',')+' '+u};if(n>=1e6)return (n/1e6).toFixed(1).replace('.',',')+' M';if(n>=1e3)return f(n/1e3,'K');return String(n)}
-  var NICHE={
-    "Comedia":"Humor y entretenimiento en formato corto, pensado para compartir y generar conversación.",
-    "Lifestyle":"Día a día, rutinas, viajes y recomendaciones con las que su comunidad se identifica.",
-    "Música":"Contenido musical y cultura de artistas, ideal para lanzamientos y campañas de entretenimiento.",
-    "Moda":"Looks, tendencias y estilo personal, con lugar natural para marcas de ropa y accesorios.",
-    "Belleza":"Maquillaje, cuidado personal y productos, con integración orgánica de marcas."
-  };
   var SH=["#17123F","#6F5CFF","#9AB82E","#B4A8FF"];
   function plats(r){
     var a=[];
@@ -658,23 +584,34 @@ body.lock{overflow:hidden}
   }
   function renderKit(i){
     var r=ROSTER[i],P=plats(r),tot=P.reduce(function(a,x){return a+x.f},0),mx=Math.max.apply(null,P.map(function(x){return x.f}));
+    var tt=r.p.filter(function(p){return p.likes})[0];
+    var SHC=["#C9F25B","#6F5CFF","#E7EBF1","#B4A8FF"];
+    var wa='https://wa.me/584241859724?text='+encodeURIComponent('Hola WMG, quiero información para trabajar con '+r.n+'.');
     var h='<div class="kbar"><div class="tag">Roster WMG</div><button class="kx" id="kclose" type="button">Cerrar <span aria-hidden="true">✕</span></button></div><div class="wrap">';
-    h+='<div class="khero"><div><span class="chip"><i></i>Media kit</span><h2><span>'+esc(r.first)+'</span>'+(r.last?'<span>'+esc(r.last)+'</span>':'')+'</h2><p class="tag2">Creador de contenido de '+r.niches.join(', ').toLowerCase().replace(/, ([^,]*)$/,' y $1')+'.</p><div class="facts">'+P.map(function(x){return '<span class="fact">'+ico(x.n)+'<span><b>'+compact(x.f)+'</b> <small>'+x.n+'</small></span></span>'}).join('')+'</div></div><div class="kph"><img src="'+r.img+'" alt="'+esc(r.n)+'" style="object-position:'+(r.pos||'50% 20%')+'"></div></div>';
-    h+='<div class="ksec"><div class="kh"><div><div class="tag">Nichos y contenido</div><h3>Lo que <span class="hl">'+esc(r.first)+'</span> crea</h3></div><p>Las categorías en las que se mueve su contenido y su comunidad.</p></div><div class="niche">'+r.niches.map(function(n,k){return '<div class="nc"><span class="n">0'+(k+1)+'</span><h4>'+esc(n)+'</h4><p>'+(NICHE[n]||'')+'</p></div>'}).join('')+'</div></div>';
-    var off=0,segs='',lg='',bars='';
-    P.forEach(function(x,k){var sh=x.f/tot,len=sh*301.6;segs+='<circle class="seg" cx="60" cy="60" r="48" stroke="'+SH[k]+'" style="--d:'+Math.max(len-2,1).toFixed(1)+'px" stroke-dashoffset="'+(-off).toFixed(1)+'"/>';off+=len;
-      lg+='<li><i style="background:'+SH[k]+'"></i><span>'+x.n+'</span><b>'+Math.round(sh*100)+'%</b></li>';
-      bars+='<div class="bar"><span class="lb">'+ico(x.n)+x.n+'</span><span class="tr"><i style="--v:'+Math.max(x.f/mx,.02).toFixed(4)+'"></i></span><b>'+compact(x.f)+'</b></div>'});
-    h+='<div class="ksec"><div class="sheet"><div class="kh"><div><div class="tag">Media kit · Cifras</div><h3>Alcance por <span style="color:var(--violet)">red social</span></h3></div><p>Cifras públicas de cada perfil, actualizadas el '+STATS_DATE+'.</p></div>';
-    h+='<div class="cards"><div class="cd"><h4>Audiencia combinada</h4><div class="total"><div class="donut"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="bgc" cx="60" cy="60" r="48"/>'+segs+'</svg><div class="mid"><span><b>'+compact(tot)+'</b>seguidores</span></div></div><ul class="legend">'+lg+'</ul></div></div><div class="cd"><h4>Comparativa por plataforma</h4><div class="bars">'+bars+'</div></div></div>';
-    h+='<div class="plats">'+P.map(function(x){return '<div class="pl"><div class="top"><span>'+ico(x.n)+x.n+'</span><a href="'+x.u+'" target="_blank" rel="noopener">'+esc(x.h)+' ↗</a></div><b>'+compact(x.f)+'</b><small>'+(x.lab||'Seguidores')+'</small><p>'+x.x+'</p></div>'}).join('')+'</div>';
-    h+='<p class="note">Fuente: perfiles públicos de cada red. Las cifras cambian con el tiempo; solicita el media kit actualizado con métricas de audiencia a nuestro equipo.</p></div></div>';
-    h+='<div class="kcta"><h3>Trabaja con '+esc(r.first)+'</h3><a class="btn" href="#contacto" id="kcta">Contáctanos <span class="ar">↗</span></a></div>';
+    h+='<div class="khero"><div><span class="chip"><i></i>Media kit</span><h2><span>'+esc(r.first)+'</span>'+(r.last?'<span>'+esc(r.last)+'</span>':'')+'</h2>'+
+      '<div class="pills">'+r.niches.map(function(n){return '<span>'+esc(n)+'</span>'}).join('')+'</div>'+
+      '<div class="tot"><b>'+compact(tot)+'</b><span>seguidores en '+P.length+' redes</span></div></div>'+
+      '<div class="kph"><img src="'+r.img+'" alt="'+esc(r.n)+'" style="object-position:'+(r.pos||'50% 20%')+'"></div></div>';
+    /* tarjetas de números */
+    var cards=P.map(function(x){
+      var top=x.f===mx?' top1':'';
+      return '<a class="ks'+top+'" href="'+x.u+'" target="_blank" rel="noopener"><div class="top"><span>'+ico(x.n)+x.n+'</span><i>↗</i></div><b>'+compact(x.f)+'</b><small>'+(x.lab||'Seguidores')+'</small><div class="meta">'+esc(x.h)+(x.videos?' · '+x.videos+(x.videos===1?' video':' videos'):'')+'</div></a>';
+    }).join('');
+    if(tt)cards+='<div class="ks lk"><div class="top"><span>'+ico('TikTok')+'TikTok</span></div><b>'+compact(tt.likes)+'</b><small>Me gusta acumulados</small><div class="meta">'+tt.videos+' videos publicados</div></div>';
+    h+='<div class="ksec"><div class="klabel"><b>Alcance por red</b><span>Perfiles públicos · '+STATS_DATE+'</span></div><div class="kstats">'+cards+'</div>';
+    /* reparto */
+    h+='<div class="share"><div class="bar" role="img" aria-label="Reparto de la audiencia por red">'+P.map(function(x,k){return '<i style="width:'+(x.f/tot*100).toFixed(2)+'%;background:'+SHC[k]+'"></i>'}).join('')+'</div>'+
+       '<div class="leg">'+P.map(function(x,k){var pc=x.f/tot*100;return '<span><i style="background:'+SHC[k]+'"></i>'+x.n+' <b>'+(pc<1?'<1':Math.round(pc))+'%</b></span>'}).join('')+'</div></div></div>';
+    h+='<div class="kcta"><h3>Trabaja con '+esc(r.first)+'</h3><div class="acts"><a class="btn" href="#contacto" id="kcta">Contáctanos <span class="ar">↗</span></a><a class="btn o" href="'+wa+'" target="_blank" rel="noopener">WhatsApp</a></div></div>';
     h+='<div class="knext"><span>Conoce a otros talentos</span><div>'+ROSTER.map(function(x,k){return k===i?'':'<button type="button" data-k="'+k+'">'+esc(x.n)+'</button>'}).join('')+'</div></div></div>';
+    h+='<div class="kfloat off"><a class="btn volt" href="#contacto" id="kfab">Contactar <span class="ar">↗</span></a></div>';
     kit.innerHTML=h;
     $('#kclose').addEventListener('click',closeKit);
     $$('[data-k]',kit).forEach(function(b){b.addEventListener('click',function(){openKit(+b.dataset.k)})});
-    $('#kcta').addEventListener('click',function(e){e.preventDefault();closeKit(true);setTab('marca');var cb=$('#ti'+i);if(cb)cb.checked=true;$('#m-msg').value='Hola, quiero información para trabajar con '+r.n+'.';$('#contacto').scrollIntoView()});
+    function toForm(e){e.preventDefault();closeKit(true);setTab('marca');var cb=$('#ti'+i);if(cb)cb.checked=true;$('#m-msg').value='Hola, quiero información para trabajar con '+r.n+'.';$('#contacto').scrollIntoView()}
+    $('#kcta').addEventListener('click',toForm);$('#kfab').addEventListener('click',toForm);
+    var fl=$('.kfloat',kit),cta=$('.kcta',kit);
+    kit.onscroll=function(){var y=kit.scrollTop,near=cta.getBoundingClientRect().top<innerHeight-40;fl.classList.toggle('off',y<420||near)};
     kit.scrollTop=0;
   }
   function openKit(i){
